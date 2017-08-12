@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#particles-js {
+  background-color: #0b2638;
+  position: relative;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0b2638+0,16395b+100 */
+background: rgb(11,38,56); /* Old browsers */
+background: -moz-linear-gradient(left, rgba(11,38,56,1) 0%, rgba(22,57,91,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(11,38,56,1) 0%,rgba(22,57,91,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(11,38,56,1) 0%,rgba(22,57,91,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b2638', endColorstr='#16395b',GradientType=1 ); /* IE6-9 */
+height: 100%;
+}
+
+.banner {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  color: #e4e4e4;
+  text-shadow: 1px 2px 2px #1b1b1b;
+  text-align: center;
+}
+
+.banner .headline {
+  font-size: 4rem;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #77d7fd;
+}
+
+.banner .name {
+  color: #77d7fd;
+  font-weight: 700;
+}
+
+.banner .description {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 300;
+  padding: 0 10px;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+  .banner {
+    top: 10%;
+  }
+
+  .banner .headline {
+    font-size: 2rem;
+  }
+
+  .banner .description {
+    font-size: 1rem;
+  }
+
+  #particles-js {
+    height: 350px;
+  }
+}
