@@ -1,0 +1,16 @@
+.social-network {
+  font-size: 3em;
+  background-color: #144363;
+  padding: 5px 18px;
+  border-radius: 100%;
+  color: #fff;
+  display: inline-block;
+  
+
+  &:hover {
+    background-color: #fff;
+    color: #144363;
+    transition: 0.6s all ease;
+    transform: scale(1.1);
+  }
+}

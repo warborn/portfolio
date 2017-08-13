@@ -1,0 +1,107 @@
+/*
+  @fonts
+  @resets
+  @base
+  @main-styles
+  @media-queries
+*/
+
+/* @fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+
+/* @base */
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#particles-js {
+  background-color: #0b2638;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0b2638+0,16395b+100 */
+  background: rgb(11,38,56); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(11,38,56,1) 0%, rgba(22,57,91,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(11,38,56,1) 0%,rgba(22,57,91,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(11,38,56,1) 0%,rgba(22,57,91,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0b2638', endColorstr='#16395b',GradientType=1 ); /* IE6-9 */
+  position: relative;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+.main-container {
+  position: relative;
+  top:100%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.banner-box {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+}
+
+/* @main-styles */
+.about-me {
+  padding: 50px 0;
+}
+
+.about-me .avatar-box {
+  // height: 300px;
+  // width: 300px;
+  width: 100%;
+}
+
+.about-me .bio {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  color: #3E3E3E;
+}
+
+/* @media-queries */
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  .social-networks {
+    margin-top: 50px;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+  .banner-box {
+    top: 10%;
+  }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+  .banner-box {
+    top: 10%;
+
+    .headline {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+
+  .social-network {
+    font-size: 2em;
+    padding: 5px 14px;
+    margin-bottom: 10px;
+  }
+
+  #particles-js {
+    height: 350px;
+  }
+}

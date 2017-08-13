@@ -1,0 +1,23 @@
+.banner-box {
+  color: #e4e4e4;
+  text-shadow: 1px 2px 2px #1b1b1b;
+  text-align: center;
+
+  > .headline {
+    font-size: 4rem;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #77d7fd;
+  }
+
+  > .headline .name {
+    color: #77d7fd;
+    font-weight: 700;
+  }
+
+  > .description {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 300;
+    padding: 0 10px;
+  }
+}

@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Iván Munguía</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/05f5671d94.js"></script>
 </head>
 <body>
   <div id="particles-js">
-    <div class="banner">
+    <div class="banner-box fade-in">
       <div class="headline">
         Hi, I'm <span class="name">Iván Munguía</span>
       </div>
@@ -16,8 +18,34 @@
       </div>
     </div>
   </div>
-  <div>
-    info
-  </div>
+
+  <div class="container-fluid main-container"><!-- start of main-container -->
+    <section class="about-me row"><!-- start of about-me section -->
+      <div class="col-10 col-sm-5 ml-auto mr-auto col-lg-3">
+        <div class="avatar-box">
+          <img class="photo" src="https://pbs.twimg.com/profile_images/884860135608156160/5sxWl8MC_400x400.jpg" alt="profile picture of Iván">
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-8">
+        <div class="row social-networks">
+          <div class="col-4 col-sm-3 ml-auto">
+            <a href="https://github.com/warborn" target="_blank" class="social-network"><i class="fa fa-github-alt"></i></a>
+          </div>
+          <div class="col-4 col-sm-3">
+            <a href="https://www.linkedin.com/in/ivan-amc/" target="_blank" class="social-network"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <div class="col-4 col-sm-3 mr-auto">
+            <a href="https://twitter.com/warbornx" target="_blank" class="social-network"><i class="fa fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="mt-5 bio">
+          <p>
+            I have 2 years of experience in Web Development, i consider myself as a Full Stack Web Developer, i have built applications from the front-end to the back-end, i have experience designing databases, configuring linux web servers to host the applications, API integration and development, creating and consuming web services, using vagrant for development environment creation. I have worked with many technologies to make my work easier like ES6, Sass, Webpack, AngularJS, ReactJS, VueJS, NodeJS, Docker, Git, Rails, Laravel, etc.
+          </p>
+        </div>
+      </div>
+    </section><!-- end of about-me section-->
+  </div><!-- end of main container -->
 </body>
 </html>
