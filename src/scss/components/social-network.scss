@@ -1,5 +1,5 @@
 .social-network {
-  font-size: 3em;
+  font-size: 2.8em;
   background-color: #144363;
   padding: 5px 18px;
   border-radius: 100%;
@@ -13,4 +13,13 @@
     transition: 0.6s all ease;
     transform: scale(1.1);
   }
+
+  &.-github   { background-color: #3D3B3B; }
+  &.-linkedin { background-color: #0077B5; }
+  &.-twitter  { background-color: #1DA1F2; }
+
+
+  &.-github:hover   { color: #3D3B3B; background-color: #fff; }
+  &.-linkedin:hover { color: #0077B5; background-color: #fff; }
+  &.-twitter:hover  { color: #1DA1F2; background-color: #fff; }
 }
