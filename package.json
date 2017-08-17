@@ -4,7 +4,9 @@
   "description": "My portfolio site",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "netlify-deploy": "npm run build"
   },
   "author": "Iván Munguía",
   "license": "MIT",
@@ -20,6 +22,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",

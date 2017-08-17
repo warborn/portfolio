@@ -40,9 +40,6 @@ const config = {
       }
     ]
   },
-  devServer: {
-    historyApiFallback: true
-  },
   resolve: {
     modules: [path.resolve('./src'), 'node_modules'],
     alias: {
@@ -54,14 +51,37 @@ const config = {
       "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
       "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
     }
-  },
-  plugins: [
-    htmlWebpackPluginConfig,
-    new ExtractTextPlugin({
-      filename: 'dist/index_bundle.css',
-      allChunks: true
-    })
-  ]
+  }
 }
 
-export default config;
+const isProduction = process.env.NODE_ENV === 'production';
+
+const plugins = [
+  htmlWebpackPluginConfig,
+  new ExtractTextPlugin({
+    filename: 'dist/index_bundle.css',
+    allChunks: true
+  })
+]
+
+if (isProduction === true) {
+  console.log('****PRODUCTION BUILD****');
+  plugins.push(
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, minimize: true })
+  );
+}
+
+const developmentConfig = {
+  devServer: {
+    historyApiFallback: true
+  },
+  plugins: plugins
+}
+
+const productionConfig = {
+  plugins: plugins
+}
+
+export default Object.assign({}, config, 
+  isProduction === true ? productionConfig : developmentConfig
+);
