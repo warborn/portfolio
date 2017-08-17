@@ -10,9 +10,7 @@ bannerTimeline.add(TweenMax.to('#banner', 0.4, {
   top: '-10px', height: '63px', width: '100%', left: '0', fontSize: '0.7rem',
   overflow: 'hidden', backgroundColor: 'rgba(121, 83, 83, 0.1)', ease:Power0.easeOut 
 }));
-bannerTimeline.add(TweenMax.to('#banner .headline', 0.2, { 
-  paddingBottom: '0', borderBottom: '1px solid #313131', opacity: '0' 
-}));
+bannerTimeline.add(TweenMax.to('#banner .headline', 0.2, { opacity: '0' }));
 bannerTimeline.add(TweenMax.to('#banner .description', 0.2, { opacity: '0'}));
 
 new ScrollMagic.Scene({

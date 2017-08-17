@@ -18,6 +18,7 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
+  color: #B0B2B3;
 }
 
 body {
@@ -29,6 +30,15 @@ body {
   background: linear-gradient(to right, rgba(21,22,30,1) 0%,rgba(11,38,56,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15161e', endColorstr='#0b2638',GradientType=1 ); /* IE6-9 */
   position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
 }
 
 #particles-js {
@@ -48,23 +58,40 @@ body {
   z-index: 1;
 }
 
+.gradient-line {
+  height: 2px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131a24+5,b2393b+51,0d2232+94 */
+  background: rgb(19,26,36); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(19,26,36,1) 5%, rgba(178,57,59,1) 51%, rgba(13,34,50,1) 94%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(19,26,36,1) 5%,rgba(178,57,59,1) 51%,rgba(13,34,50,1) 94%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(19,26,36,1) 5%,rgba(178,57,59,1) 51%,rgba(13,34,50,1) 94%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#131a24', endColorstr='#0d2232',GradientType=1 ); /* IE6-9 */
+  margin: 10px 0;
+}
+
+.separator {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#181e24+0,c9c9c9+3,c9c9c9+22,0d2232+94 */
+  background: rgb(24,30,36); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(24,30,36,1) 0%, rgba(201,201,201,1) 3%, rgba(201,201,201,1) 22%, rgba(13,34,50,1) 94%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(24,30,36,1) 0%,rgba(201,201,201,1) 3%,rgba(201,201,201,1) 22%,rgba(13,34,50,1) 94%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(24,30,36,1) 0%,rgba(201,201,201,1) 3%,rgba(201,201,201,1) 22%,rgba(13,34,50,1) 94%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#181e24', endColorstr='#0d2232',GradientType=1 ); /* IE6-9 */
+  height: 1px;
+  margin: 10px 0;
+}
+
+.date {
+  color: #8e8e8e;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.unam {
+  color: #A9730B;
+}
+
 /* @main-styles */
-.about-me {
-  padding: 50px 0;
-}
-
-.about-me .avatar-box {
-  width: 100%;
-}
-
-.about-me .bio {
-  font-size: 1.3rem;
-  line-height: 2rem;
-  color: #E5E5E5;
-  text-shadow: 1px 1px 1px #333333;
-}
-
-.banner-box {
+#particles-js .banner-box {
   position: absolute;
   top: 25%;
   left: 25%;
@@ -79,13 +106,68 @@ body {
   width: 100%;
   z-index: 100;
   position: fixed;
+
+  .nav-menu {
+    box-shadow: 1px 1px 1px #313131;
+    background-color: rgba(121, 83, 83, 0.1);
+    padding-bottom: 5px;
+  }
 }
 
-.nav-menu {
-  box-shadow: 1px 1px 1px #313131;
-  background-color: rgba(121, 83, 83, 0.1);
-  padding-bottom: 5px;
+.about-me {
+  padding: 50px 0;
+  text-shadow: 1px 1px 1px #202020;
 }
+
+.about-me .avatar-box {
+  width: 100%;
+}
+
+.about-me .bio {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #E5E5E5;
+  font-weight: 300;
+}
+
+.about-me .education {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #E5E5E5;
+  font-weight: 300;
+}
+
+.about-me .university {
+  font-weight: 400;
+}
+
+.about-me .acomplishments {
+  list-style: none;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.about-me .acomplishments li {
+  padding-left: 10px;
+  border-left: 2px solid #e57373;
+  margin-bottom: 5px;
+}
+
+@mixin technology {
+  font-weight: 500;
+  font-style: italic;
+  text-shadow: none;
+}
+
+// .es6     { @include technology; color: #F7E88A; }
+// .sass    { @include technology; color: #F19FC8; }
+// .webpack { @include technology; color: #9BD0EA; }
+// .reactjs { @include technology; color: #6EDAEC; }
+// .nodejs  { @include technology; color: #AFE162; }
+// .rails   { @include technology; color: #EE6C62; }
+// .laravel { @include technology; color: #FA8E89; }
 
 /* @media-queries */
 
