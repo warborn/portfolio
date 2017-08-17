@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "cross-env NODE_ENV=production webpack -p",
-    "netlify-deploy": "npm run build"
+    "netlify-deploy": "yarn run build"
   },
   "author": "Iván Munguía",
   "license": "MIT",
