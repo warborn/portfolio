@@ -59,7 +59,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const plugins = [
   htmlWebpackPluginConfig,
   new ExtractTextPlugin({
-    filename: 'dist/index_bundle.css',
+    filename: 'index_bundle.css',
     allChunks: true
   })
 ]
