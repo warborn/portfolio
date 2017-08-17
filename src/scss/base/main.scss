@@ -109,7 +109,8 @@ h6 {
 
   .nav-menu {
     box-shadow: 1px 1px 1px #313131;
-    background-color: rgba(121, 83, 83, 0.1);
+    // background-color: rgba(121, 83, 83, 0.1);
+    background-color: transparent;
     padding-bottom: 5px;
   }
 }
@@ -180,22 +181,38 @@ h6 {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-  .banner-box {
-    top: 10%;
+  #particles-js .banner-box {
+    top: 20%;
+
+    .headline {
+      font-size: 3.5rem;
+    }
+
+    .description {
+      font-size: 1.2rem;
+    }
+  }
+
+  .nav-menu {
+    justify-content: center!important;
+
+    .sections {
+      display: none;
+    }
   }
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
-  .banner-box {
-    top: 10%;
+  #particles-js .banner-box {
+    top: 12%;
 
     .headline {
-      font-size: 2rem;
+      font-size: 2.1rem;
     }
 
     .description {
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
   }
 
@@ -207,5 +224,9 @@ h6 {
 
   #particles-js {
     height: 700px;
+  }
+
+  .nav-menu .title .name {
+    font-size: 1.8rem;
   }
 }
