@@ -4,7 +4,7 @@
   text-align: center;
 
   > .headline {
-    font-size: 4rem;
+    font-size: 4em;
     padding-bottom: 20px;
     border-bottom: 1px solid #77d7fd;
   }
@@ -12,10 +12,11 @@
   > .headline .name {
     color: #e57373;
     font-weight: 700;
+    font-family: 'Bitter', serif;
   }
 
   > .description {
-    font-size: 1.3rem;
+    font-size: 1.3em;
     color: #fff;
     font-weight: 300;
     padding: 0 10px;
