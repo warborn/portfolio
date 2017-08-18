@@ -25,9 +25,9 @@ body {
   background-color: #0b2638;
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#15161e+0,0b2638+100 */
   background: rgb(21,22,30); /* Old browsers */
-  background: -moz-linear-gradient(left, rgba(21,22,30,1) 0%, rgba(11,38,56,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(21,22,30,1) 0%,rgba(11,38,56,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(21,22,30,1) 0%,rgba(11,38,56,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-image: url(https://s20.postimg.org/ewenwu20d/noise.png), -moz-linear-gradient(left, rgba(21,22,30,1) 0%, rgba(11,38,56,1) 100%); /* FF3.6-15 */
+  background-image: url(https://s20.postimg.org/ewenwu20d/noise.png), -webkit-linear-gradient(left, rgba(21,22,30,1) 0%,rgba(11,38,56,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background-image: url(https://s20.postimg.org/ewenwu20d/noise.png), linear-gradient(to right, rgba(21,22,30,1) 0%,rgba(11,38,56,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#15161e', endColorstr='#0b2638',GradientType=1 ); /* IE6-9 */
   position: relative;
 }
