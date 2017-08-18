@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "gsap": "^1.20.2",
-    "particles.js": "^2.0.0",
+    "particles.js": "https://github.com/warborn/particles.js.git",
     "scrollmagic": "^2.0.5"
   },
   "devDependencies": {
