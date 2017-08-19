@@ -1,0 +1,78 @@
+.code-editor {
+  background-color: rgba(49, 52, 64, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 10px 6px -6px #000;
+  border: 1px solid #1B1C22;
+  font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier;
+  font-weight: bold;
+
+  > .tabs {
+    background-color: rgba(38, 40, 49, 0.8);
+    border-bottom: 1px solid #1B1C22;
+    // overflow: hidden;
+  }
+
+  > .tabs > .title {
+    width: 60%;
+    position: relative;
+    top: 1px;
+    background-color: rgba(49, 52, 64, 0.8);
+    padding: 5px 0 7px 5px;
+    border-right: 1px solid #1B1C22;
+    text-align: center;
+    font-size: 1.2rem;
+    word-wrap: break-word;
+  
+    &.-ruby { color: #D16262; }
+    &.-javascript { color: #DBB984; }
+    &.-html { color: #E27B60; }
+    &.-react { color: #75E0FD; }
+  }
+
+  >.tabs > .title > .icon {
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+    color: inherit;
+    font-size: 1rem;
+  }
+
+  > .content {
+    padding: 20px 0;
+    font-size: 1.05rem;
+  }
+
+  > .content > .lines {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .lines > .line ::selection {
+    background-color: rgba(62, 68, 81, 0.8);
+  }
+
+  .lines > .line {
+    white-space: nowrap;
+  }
+  
+  .lines > .line > span {
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .lines .linenumber {
+    color: #414556;
+    padding: 0 15px 0 10px;
+    font-weight: normal;
+  }
+
+  .red        { color: #e06c75; }
+  .purple     { color: #c678dd; }
+  .yellow     { color: #FECF5F; }
+  .orange     { color: #FB8578; }
+  .blue       { color: #7EBAFF; }
+  .green      { color: #98c379; }
+  .light-blue { color: #75E0FD }
+  .comment    { color: #5c6370; font-style: italic; }
+}
