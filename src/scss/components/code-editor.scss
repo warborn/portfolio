@@ -1,5 +1,5 @@
 .code-editor {
-  background-color: rgba(49, 52, 64, 0.8);
+  background-color: rgba(49, 52, 64, 0.7);
   border-radius: 5px;
   box-shadow: 0 10px 6px -6px #000;
   border: 1px solid #1B1C22;
@@ -7,18 +7,13 @@
   font-weight: bold;
 
   > .tabs {
-    background-color: rgba(38, 40, 49, 0.8);
-    border-bottom: 1px solid #1B1C22;
-    // overflow: hidden;
+    background-color: transparent;
   }
 
   > .tabs > .title {
     width: 60%;
     position: relative;
-    top: 1px;
-    background-color: rgba(49, 52, 64, 0.8);
     padding: 5px 0 7px 5px;
-    border-right: 1px solid #1B1C22;
     text-align: center;
     font-size: 1.2rem;
     word-wrap: break-word;
@@ -27,6 +22,20 @@
     &.-javascript { color: #DBB984; }
     &.-html { color: #E27B60; }
     &.-react { color: #75E0FD; }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      content: '';
+      color: #6E7180;
+      width: 66.5%;
+      padding-top: 5px;
+      height: 100%;
+      background-color: rgba(38, 40, 49, 0.7);
+      border-bottom: 1px solid #1B1C22;
+      border-left: 1px solid #1B1C22;
+    }
   }
 
   >.tabs > .title > .icon {
@@ -38,7 +47,7 @@
   }
 
   > .content {
-    padding: 20px 0;
+    padding: 20px 0 20px 10px;
     font-size: 1.05rem;
   }
 
@@ -49,7 +58,7 @@
   }
 
   .lines > .line ::selection {
-    background-color: rgba(62, 68, 81, 0.8);
+    background-color: rgba(62, 68, 81, 0.7);
   }
 
   .lines > .line {
@@ -63,7 +72,7 @@
 
   .lines .linenumber {
     color: #414556;
-    padding: 0 15px 0 10px;
+    padding: 0 15px 0 0;
     font-weight: normal;
   }
 

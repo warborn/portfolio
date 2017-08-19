@@ -240,9 +240,12 @@ h6 {
 
   .code-editor {
     > .tabs > .title {
-      border-right: none;
       width: 100%;
       font-size: 1rem;
+
+      &:after {
+        display: none;
+      }
     }
 
     > .content {
