@@ -3,7 +3,6 @@
   @resets
   @base
   @main-styles
-  @media-queries
 */
 
 /* @fonts */
@@ -39,6 +38,16 @@ h4,
 h5,
 h6 {
   color: #fff;
+  line-height: 1.45;
+}
+
+h2 {
+  font-size: 3.125rem;
+}
+
+h3 {
+  font-size: 2.188rem; 
+  margin-top: 40px;
 }
 
 #particles-js {
@@ -94,8 +103,8 @@ h6 {
 #particles-js .banner-box {
   position: absolute;
   top: 25%;
-  left: 25%;
-  width: 50%;
+  left: 17%;
+  width: 65%;
 }
 
 #menu {
@@ -118,57 +127,39 @@ h6 {
 .about-me {
   padding: 50px 0;
   text-shadow: 1px 1px 1px #202020;
-}
 
-.about-me .avatar-box {
-  width: 100%;
-}
+  .avatar-box {
+    width: 100%;
+  }
 
-.bio {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  color: #E5E5E5;
-  font-weight: 300;
-}
+  .university {
+    font-weight: 400;
+  }
 
-.about-me .education {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  color: #E5E5E5;
-  font-weight: 300;
-}
+  .acomplishments {
+    list-style: none;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
 
-.about-me .university {
-  font-weight: 400;
-}
-
-.about-me .acomplishments {
-  list-style: none;
-  font-size: 1.1rem;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-}
-
-.about-me .acomplishments li {
-  padding-left: 10px;
-  border-left: 2px solid #e57373;
-  margin-bottom: 5px;
-}
-
-.main-container h3 {
-  margin-top: 40px;
-}
-
-@mixin technology {
-  font-weight: 500;
-  font-style: italic;
-  text-shadow: none;
+  .acomplishments li {
+    padding-left: 10px;
+    border-left: 2px solid #e57373;
+    margin-bottom: 5px;
+  }
 }
 
 .skills .code-editor {
   margin-bottom: 40px;
 }
+
+// @mixin technology {
+//   font-weight: 500;
+//   font-style: italic;
+//   text-shadow: none;
+// }
 
 // .es6     { @include technology; color: #F7E88A; }
 // .sass    { @include technology; color: #F19FC8; }
@@ -177,109 +168,3 @@ h6 {
 // .nodejs  { @include technology; color: #AFE162; }
 // .rails   { @include technology; color: #EE6C62; }
 // .laravel { @include technology; color: #FA8E89; }
-
-/* @media-queries */
-
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px) {
-  .flip-container {
-    &,
-    .front,
-    .back {
-      width: 100%;
-      height: 340px;
-    }
-  }
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
-  .social-networks {
-    margin-top: 50px;
-  }
-}
-
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-  #particles-js .banner-box {
-    top: 20%;
-
-    .headline {
-      font-size: 3.5rem;
-    }
-
-    .description {
-      font-size: 1.2rem;
-    }
-  }
-
-  .nav-menu {
-    justify-content: center!important;
-
-    .sections {
-      display: none;
-    }
-  }
-
-  .flip-container {
-    &,
-    .front,
-    .back {
-      width: 100%;
-      height: 220px;
-    }
-  }
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
-  #particles-js .banner-box {
-    top: 12%;
-
-    .headline {
-      font-size: 2.1rem;
-    }
-
-    .description {
-      font-size: 1.05rem;
-    }
-  }
-
-  .social-network {
-    font-size: 2em;
-    padding: 5px 14px;
-    margin-bottom: 10px;
-  }
-
-  #particles-js {
-    height: 700px;
-  }
-
-  .nav-menu .title .name {
-    font-size: 1.8rem;
-  }
-
-  .code-editor {
-    > .tabs > .title {
-      width: 100%;
-      font-size: 1rem;
-
-      &:after {
-        display: none;
-      }
-    }
-
-    > .content {
-      font-size: 0.90rem;
-    }
-  }
-
-  .flip-container {
-    &,
-    .front,
-    .back {
-      width: 100%;
-      height: 350px;
-    }
-  }
-}
