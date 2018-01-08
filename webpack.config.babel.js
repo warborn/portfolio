@@ -3,22 +3,24 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import webpack from 'webpack';
 
-const htmlWebpackPluginConfig = new HtmlWebpackPlugin({ template: './src/index.html' });
-
+const srcPath = path.join(__dirname, 'src');
 const PATHS = {
-  app: path.join(__dirname, 'src'),
+  app: srcPath,
+  indexPage: path.join(srcPath, 'js', 'index.js'),
+  indexPageStyles:path.join(srcPath, 'scss', 'index.scss'),
+  projectsPage: path.join(srcPath, 'js', 'projects.js'),
+  projectsPageStyles: path.join(srcPath, 'scss', 'projects.scss'),
   build: path.join(__dirname, 'dist'),
-  styles: path.join(__dirname, 'src', 'scss', 'index.scss')
 };
 
 const config = {
-  entry: [
-    PATHS.app,
-    PATHS.styles
-  ],
+  entry: {
+    index: [PATHS.indexPage, PATHS.indexPageStyles],
+    projects: [PATHS.projectsPage, PATHS.projectsPageStyles],
+  },
   output: {
     path: PATHS.build,
-    filename: 'index_bundle.js',
+    filename: '[name]_bundle.js',
     publicPath: '/'
   },
   module: {
@@ -57,12 +59,22 @@ const config = {
 const isProduction = process.env.NODE_ENV === 'production';
 
 const plugins = [
-  htmlWebpackPluginConfig,
+  new HtmlWebpackPlugin({
+    inject: true,
+    chunks: ['index'],
+    filename: 'index.html',
+    template: './src/index.html'
+  }),
+  new HtmlWebpackPlugin({
+    inject: true,
+    chunks: ['projects'],
+    filename: 'projects.html',
+    template: './src/projects.html'
+  }),
   new ExtractTextPlugin({
-    filename: 'index_bundle.css',
-    allChunks: true
+    filename: '[name]_bundle.css'
   })
-]
+];
 
 if (isProduction === true) {
   console.log('****PRODUCTION BUILD****');
