@@ -37,3 +37,24 @@ banner.classList.add('fade-in');
 setTimeout(function() {
   banner.classList.remove('fade-in');
 }, 1500);
+
+// Setup event handlers to change the current active navigation link
+const activeLinkClass = '-active';
+const [aboutMeLink, skillsLink] = [...document.querySelectorAll('.sections .link')]
+                    .slice(0, 2);
+
+new ScrollMagic.Scene({ triggerElement: '#about-me' })
+  .setClassToggle(aboutMeLink, activeLinkClass)
+  .addTo(controller);
+
+new ScrollMagic.Scene({ triggerElement: '#skills', offset: 200 })
+  .on('enter', function() {
+    aboutMeLink.classList.remove(activeLinkClass);
+    skillsLink.classList.add(activeLinkClass);
+  })
+  .on('leave', function () {
+    aboutMeLink.classList.add(activeLinkClass);
+    skillsLink.classList.remove(activeLinkClass);
+  })
+  .addTo(controller);
+
