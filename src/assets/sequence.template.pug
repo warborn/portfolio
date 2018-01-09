@@ -1,0 +1,50 @@
+html
+  body
+    #sequence.seq
+      .seq-nav
+        ul.seq-pagination(role="navigation" aria-label="Pagination")
+          li
+            a(href="#step1" rel="step1" title="Go to slide 1")
+              span.numeral 1
+              span.seq-tooltip Powered by Sequence.js
+          li
+            a(href="#step2" rel="step2" title="Go to slide 2")
+              span.numeral 2
+              span.seq-tooltip Create Unique Animated Themes
+          li
+            a(href="#step3" rel="step3" title="Go to slide 3")
+              span.numeral 3
+              span.seq-tooltip Rapid Development of Step-Based Applications
+        button.seq-next.seq-swipe(type="button" aria-label="Next")
+          include swipe.svg
+      button.seq-next-button.seq-next(type="button" aria-label="Next")
+        include down.svg
+      .seq-screen
+        ul.seq-canvas
+          li.step1.seq-in
+            .seq-feature.seq-half(data-seq="")
+              div(style="background-image: url()")
+                // This image is hidden via CSS and is only here for accessibility. The image shown is actually a background-image set via an inline style above
+                img(src="" alt="A close-up of green fern leaves")
+            .seq-content.seq-half.seq-valign(data-seq="")
+              div
+                h2 Powered by Sequence.js
+                h3 The responsive CSS animation framework
+          li.step2
+            .seq-feature.seq-half.seq-half-right(data-seq="")
+              div(style="background-image: url()")
+                // This image is hidden via CSS and is only here for accessibility. The image shown is actually a background-image set via an inline style above
+                img(src="" alt="Focused on a single autumn leave hanging from a thin branch. More leaves appear out of focus in the background")
+            .seq-content.seq-half.seq-half-left.seq-valign(data-seq="")
+              div
+                h2 Create Unique Animated Themes
+                h3 For sliders, presentations, banners, and other step-based applications
+          li.step3
+            .seq-feature.seq-half.seq-half-right(data-seq="")
+              div(style="background-image: url()")
+                // This image is hidden via CSS and is only here for accessibility. The image shown is actually a background-image set via an inline style above
+                img(src="" alt="A close-up of several purple flowers with yellow centers. A few rain drops sit on the pettels")
+            .seq-content.seq-half.seq-half-left.seq-valign(data-seq="")
+              div
+                h2 Rapid Development of Step-Based Applications
+                h3 All of the JavaScript functionality you need built-in

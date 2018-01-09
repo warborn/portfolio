@@ -39,6 +39,10 @@ const config = {
       },
       { test: /\.(sass|scss)$/,
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader'
       }
     ]
   },
@@ -51,7 +55,9 @@ const config = {
       "TimelineMax": path.resolve('node_modules', 'gsap/src/uncompressed/TimelineMax.js'),
       "ScrollMagic": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js'),
       "animation.gsap": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-      "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js')
+      "debug.addIndicators": path.resolve('node_modules', 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
+      "imagesLoaded": path.resolve('node_modules', 'imagesloaded/imagesloaded.pkgd.js'),
+      "Hammer": path.resolve('node_modules', 'hammerjs/hammer.js'),
     }
   }
 }
@@ -69,7 +75,7 @@ const plugins = [
     inject: true,
     chunks: ['projects'],
     filename: 'projects.html',
-    template: './src/projects.html'
+    template: './src/projects.pug'
   }),
   new ExtractTextPlugin({
     filename: '[name]_bundle.css'

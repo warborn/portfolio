@@ -1,0 +1,677 @@
+/**
+ * Theme Name: Two Up
+ * Version: 1.0.0
+ * Theme URL: http://sequencejs.com/themes/two-up/
+ *
+ * A full-screen, two column layout for showing a featured image and description
+ *
+ * This theme is powered by Sequence.js - The
+ * responsive CSS animation framework for creating unique sliders,
+ * presentations, banners, and other step-based applications.
+ *
+ * Author: Ian Lunn
+ * Author URL: http://ianlunn.co.uk/
+ *
+ * Theme License: http://sequencejs.com/licenses/#free-theme
+ * Sequence.js Licenses: http://sequencejs.com/licenses/
+ *
+ * Copyright © 2015 Ian Lunn Design Limited unless otherwise stated.
+ */
+
+@import "partials/mixins";
+@import url("http://fonts.googleapis.com/css?family=Oswald:400,700|Merriweather:300");
+
+$sequenceWidth: 100%;
+$sequenceHeight: 100%;
+
+$seqDuration: .3s;
+
+$heroHeightSmall: 200px;
+$heroHeightMedium: 300px;
+$heroHeightLarge: 400px;
+
+body {
+  overflow-x: hidden;
+}
+
+.seq {
+
+  /* Dimensions */
+  width: 100%;
+  max-width: $sequenceWidth;
+  height: 100%;
+
+  /* Hide anything that goes beyond the boundaries of the Sequence container */
+  overflow: hidden;
+
+  /* Center the Sequence container on the page */
+  margin: 0 auto;
+  padding: 0;
+
+  /* Some basic styles */
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+
+  .seq-screen,
+  .seq-canvas,
+  .seq-canvas > * {
+    /* Reset the canvas and steps for more browser consistency */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .seq-canvas {
+    /* Make the steps inline */
+    white-space: nowrap;
+
+    /* Remove the 4px gap between steps */
+    font-size: 0;
+  }
+
+  .seq-canvas > * {
+    /* Make the steps inline and 100% of the window width */
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+
+    /* Reset the font-size as the parent was set to 0 */
+    font-size: 16px;
+  }
+
+  .seq-attribution {
+    /* Credits */
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: .5em;
+    text-align: center;
+    line-height: 140%;
+
+    a {
+      color: #444;
+      text-decoration: none;
+      font-weight: 700;
+
+      &:focus,
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  .seq-preload-circle {
+    /* Color of preloader indicator circles */
+    fill: black;
+  }
+
+  .seq-in {
+    /* Until JS is enabled, put the nominated step on top of the others */
+    z-index: 1;
+  }
+
+  &.seq-active {
+    /* When JS is enabled */
+    .seq-nav {
+      display: block;
+    }
+
+    .seq-in {
+      /* Now JS is enabled, remove the z-index from the nominated step */
+      z-index: auto;
+    }
+  }
+
+  .seq-valign:before {
+    /* Vertically align elements */
+    content: "";
+    height: 100%;
+  }
+  .seq-valign:before,
+  .seq-valign > div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .seq-nav {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: $heroHeightSmall;
+    left: 50%;
+    padding: .5em 1em;
+    text-align: center;
+    background: black;
+    background: rgba(0, 0, 0, .6);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+
+    /* Horizontally align and move up so it sits at the bottom of the feature */
+    @include prefixed(transform, "translateX(-50%) translateY(-100%) translateZ(100px)");
+
+    /* Prevent the user from being able to highlight the nav */
+    -webkit-touch-callout: none;
+    @include prefixed(user-select, "none");
+  }
+
+  .seq-pagination,
+  .seq-swipe {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .seq-swipe {
+    margin-left: .5em;
+
+    path {
+      /* Color of the swipe icon */
+      fill: white;
+    }
+  }
+
+  .seq-next {
+    /* Reset the next button so it doesn't look like a button */
+    padding: 0;
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+
+  .seq-pagination {
+    margin: 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+    }
+
+    li {
+      /* Make the pagination links circles */
+      display: inline-block;
+      vertical-align: top;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      width: 1em;
+      height: 1em;
+      margin: 0;
+      margin-right: 1em;
+      padding: 0;
+      border: white solid 2px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .6);
+      @include prefixed(transition-duration, $seqDuration);
+      @include prefixed(transition-property, "background");
+
+      .numeral {
+        /* Numbers shown in pagination */
+        font-size: .6875em;
+        font-weight: 700;
+        color: black;
+        vertical-align: top;
+        line-height: 1.45454545em;
+        @include prefixed(transition-duration, $seqDuration);
+        @include prefixed(transition-property, "color");
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      &:focus,
+      &:hover {
+        background: white;
+
+        .numeral {
+          color: black;
+        }
+      }
+
+      &:before {
+        /* Circle around pagination. Animated when hovered over */
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: white;
+        border: white solid 2px;
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
+        opacity: 0;
+        @include prefixed(transform, "translateX(-50%) translateY(-50%) scale(3)");
+        @include prefixed(transition-duration, $seqDuration);
+        @include prefixed(transition-timing-function, "ease-out");
+        @include prefixed(transition-property, "transform, opacity");
+      }
+
+      &.seq-current {
+        cursor: auto;
+      }
+
+      &.seq-current:before {
+        /* Animate the circle around the pagination link */
+        opacity: 1;
+        @include prefixed(transform, "translateX(-50%) translateY(-50%) scale(1)");
+      }
+
+      &:after {
+        /* Lines between dots */
+        pointer-events: none;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        height: 2px;
+        width: 1.25em;
+        background: white;
+        @include prefixed(transform, "translateY(-50%)");
+      }
+
+      &:last-child {
+        /* Remove the line after the last dot as it's not needed */
+        margin-bottom: 0;
+        margin-right: 0;
+
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .seq-tooltip {
+    /* Turn off tooltips for small layout */
+    display: none;
+  }
+
+  .seq-next-button {
+    /* Turn off the next button for small layout */
+    display: none;
+  }
+
+  .seq-content {
+    /* Position the content on the left */
+    left: 0;
+    right: auto;
+    padding: 0 1em;
+    background: white;
+    text-align: center;
+    font-size: 0;
+    font-family: 'Merriweather', serif;
+
+    /* Hide the content until it is active and fades in */
+    opacity: 0;
+
+    /* When active, move the content over .3s */
+    @include prefixed(transition-duration, $seqDuration);
+    @include prefixed(transition-delay, ".2s");
+    @include prefixed(transition-property, "opacity");
+    @include prefixed(transition-timing-function, "ease-in-out");
+
+    h2 {
+      margin: 0;
+      margin-bottom: .2em;
+      font-family: 'Oswald', sans-serif;
+
+      font-size: 1.625em;
+      font-weight: 700;
+    }
+
+    h3 {
+      margin: 0;
+      line-height: 160%;
+      font-size: 1em;
+      font-weight: 300;
+    }
+  }
+
+  .seq-content > div {
+    padding: 2em 1em;
+
+    /* Reset the font-size as .seq-content was set to 0 to remove 4px gap */
+    font-size: 16px;
+
+    /* Reset the white-space so content wraps as expected */
+    white-space: normal;
+  }
+
+  .seq-button {
+    display: inline-block;
+    margin-top: 2em;
+    padding: .5em 1.2em;
+    border: black solid 3px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: .875em;
+    font-weight: 400;
+    @include prefixed(transition-duration, $seqDuration);
+    @include prefixed(transition-property, "color, background");
+
+    &:focus,
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  .seq-feature {
+    height: $heroHeightSmall;
+    overflow: hidden;
+    background: #333;
+  }
+
+  .seq-feature > div {
+    width: 100%;
+    height: 100%;
+    background-repeat: none;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    img {
+      /*
+       * The <img /> is only used for screen readers. The actual image is
+       * applied via an inline style on the <div class="seq-feature"> element
+       */
+      display: none;
+    }
+  }
+
+  .seq-in {
+    /* Animate in positions for content */
+    .seq-content {
+      opacity: 1;
+      @include prefixed(transform, "translateY(0) translateZ(0)");
+    }
+  }
+
+  .seq-out {
+    /* Animate out positions for content */
+    .seq-content {
+      opacity: 1;
+      @include prefixed(transform, "translateY(0) translateZ(0)");
+    }
+  }
+
+  &.seq-fallback {
+    /* Styles for older browsers when in fallback mode */
+
+    .seq-nav {
+      width: 100%;
+      left: 0;
+      border-radius: 0;
+      margin-top: -40px;
+    }
+
+    .seq-next-button {
+      display: none !important;
+    }
+
+    .seq-tooltip {
+      margin-top: -16px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .seq.seq-reversed .seq-content {
+    /* Don't allow content to reset to its start position when reversed */
+    opacity: 1;
+    @include prefixed(transform, "translateY(0) translateZ(0)");
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  html,
+  body {
+    /* Make the theme fullscreen */
+    height: 100%;
+  }
+
+  .seq {
+    height: $sequenceHeight;
+
+    .seq-canvas > * {
+      overflow: hidden;
+    }
+
+    .seq-attribution {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 40%;
+      background: black;
+      background: rgba(0, 0, 0, .6);
+      color: white;
+      text-align: left;
+
+      a {
+        color: #ccc;
+
+        &:focus,
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    &.seq-active {
+      /* When JS is enabled */
+      .seq-next-button {
+        display: block;
+      }
+    }
+
+    .seq-next-button {
+      cursor: pointer;
+      position: absolute;
+      z-index: 10;
+      bottom: 1em;
+      left: 50%;
+      width: 66px;
+      color: white;
+      @include prefixed(transform, "translateX(-50%) translateZ(100px)");
+      @include prefixed(transition-duration, ".1s");
+      @include prefixed(transition-property, "transform");
+    }
+
+    &.seq-no-touch .seq-next-button:hover {
+      /* Only add a hover effect on non-touch devices */
+      @include prefixed(transform, "translateX(-50%) translateZ(100px) scale(1.2)");
+    }
+
+    .seq-screen,
+    .seq-canvas,
+    .seq-canvas > * {
+      /* Make Sequence full screen in large layout */
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .seq-canvas {
+      white-space: normal;
+    }
+
+    .seq-half {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+    }
+
+    .seq-nav {
+      top: 50%;
+      left: auto;
+      right: 1em;
+      height: auto;
+      width: 1em;
+      background: transparent;
+
+      /* Vertically align */
+      @include prefixed(transform, "translateY(-50%) translateZ(100px)");
+    }
+
+    .seq-pagination {
+
+      li {
+        display: block;
+        margin: 0;
+        margin-bottom: 1em;
+        font-size: 16px;
+
+        &:hover .seq-tooltip {
+          opacity: 1;
+          visibility: visible;
+
+          /* Move the tooltip up as it appears */
+          @include prefixed(transform, "translateY(-50%) translateZ(0)");
+        }
+
+        &:after {
+          /* Lines between dots */
+          left: 50%;
+          top: 100%;
+          width: 2px;
+          height: 1.25em;
+          @include prefixed(transform, "translateX(-50%)");
+        }
+      }
+    }
+
+    .seq-tooltip {
+      display: block;
+      cursor: default;
+      pointer-events: none;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 1em;
+      margin-right: 1em;
+      padding: .5em 1em;
+      background: white;
+      font-family: 'Oswald', sans-serif;
+      font-size: .875em;
+      font-weight: 400;
+      color: black;
+      @include prefixed(transform, "translateY(-30%) translateZ(0)");
+      @include prefixed(transition-duration, ".3s");
+      @include prefixed(transition-property, "transform, opacity");
+    }
+
+    &.seq-touch .seq-tooltip {
+      /* Don't show tooltips on touch devices */
+      display: none;
+    }
+
+    .seq-swipe {
+      /* Hide the swipe indicator for large layout */
+      display: none;
+    }
+
+    .seq-feature {
+      /* Position the feature on the right */
+      left: auto;
+      right: 0;
+      height: auto;
+      @include prefixed(transform, "translateY(100%) translateZ(0)");
+      @include prefixed(transition-duration, $seqDuration);
+      @include prefixed(transition-property, "transform");
+    }
+
+    .seq-feature > div {
+      @include prefixed(transform, "translateY(-80%) translateZ(0)");
+      @include prefixed(transition-duration, $seqDuration);
+      @include prefixed(transition-property, "transform");
+    }
+
+    .seq-content {
+      @include prefixed(transform, "translateY(100%) translateZ(0)");
+      @include prefixed(transition-property, "transform, opacity");
+      @include prefixed(transition-delay, "0s");
+    }
+
+    .seq-in {
+      /* Animate in positions for content */
+      .seq-feature,
+      .seq-feature > div,
+      .seq-content {
+        @include prefixed(transform, "translateY(0) translateZ(0)");
+      }
+    }
+
+    .seq-out {
+      /* Animate out positions for content */
+      .seq-feature,
+      .seq-feature > div {
+        @include prefixed(transform, "translateY(0) translateZ(0)");
+      }
+
+      .seq-content {
+        @include prefixed(transform, "translateY(-100%) translateZ(0)");
+      }
+    }
+
+    &.seq-reversed .seq-canvas > *:first-of-type,
+    &.seq-reversed .seq-canvas > *:last-of-type {
+      /* Delay the moveActiveStepToTop option until the step has moved out */
+      @include prefixed(transition-delay, ".5s");
+      @include prefixed(transition-property, "opacity, transform, z-index !important");
+    }
+
+    &.seq-fallback {
+      /* Styles for older browsers when in fallback mode */
+
+      .seq-nav {
+        width: 1em;
+        left: auto;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-height: 400px) {
+  .seq .seq-next-button {
+    bottom: 2em;
+  }
+}
+
+@media only screen and (min-width: 769px) and (min-height: 400px) {
+  /* Increase the title font-size in two-up layout */
+  .seq .seq-content h2 {
+    font-size: 2.25em;
+  }
+}
+
+@media only screen and (min-height: 520px) and (max-width: 768px) {
+  /* Increase the height of the hero image in one-up layout */
+  .seq .seq-nav {
+    top: $heroHeightMedium;
+  }
+
+  .seq .seq-feature {
+    height: $heroHeightMedium;
+  }
+}
+
+@media only screen and (min-height: 620px) and (max-width: 768px) {
+  /* Increase the height of the hero image in one-up layout */
+  .seq .seq-nav {
+    top: $heroHeightLarge;
+  }
+
+  .seq .seq-feature {
+    height: $heroHeightLarge;
+  }
+}
