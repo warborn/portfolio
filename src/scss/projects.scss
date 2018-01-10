@@ -1,6 +1,15 @@
-@import "./themes/sequence-theme.two-up.scss";
+@import "./variables/*";
+@import "./mixins/*";
+@import "./components/nav-menu.scss";
+@import "./base/*";
+// @import "./themes/sequence-theme.two-up.scss";
 
-body {
-  background-color: red;
-  margin: 0;
+#menu {
+  display: block;
+  background-color: rgba(121, 83, 83, 0.1);
+}
+
+.main-container {
+  height: 1000px;
+  top: 25%;
 }
