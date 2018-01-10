@@ -1,6 +1,7 @@
 @import "./variables/*";
 @import "./mixins/*";
 @import "./components/nav-menu.scss";
+@import "./components/project-box.scss";
 @import "./base/*";
 // @import "./themes/sequence-theme.two-up.scss";
 
@@ -12,4 +13,8 @@
 .main-container {
   height: 1000px;
   top: 25%;
+}
+
+.projects {
+  padding: 50px 0;
 }

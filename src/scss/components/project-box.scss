@@ -1,0 +1,49 @@
+.project-box {
+  text-align: center;
+  background-color: rgba(85, 102, 122, 0.1);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  &.-fullview {
+    cursor: pointer;
+  }
+
+  > .image {
+    max-width: 100%;
+  }
+
+  > .body { 
+    padding: 15px 5px; 
+  }
+
+  > .body .title {
+    color: #e57373;
+    font-size: 1.4rem;
+  }
+
+  > .body .description {
+    line-height: 1.1rem;
+  }
+
+  > .body .link {
+    color: #e57373; 
+    text-decoration: underline;
+    display: block; 
+    margin-bottom: 5px;
+    &:hover {
+      color: rgb(233, 134, 134);
+      transition: all .2s ease-in-out;
+      transform: scale(1.05);
+    }
+  }
+
+  > .body .tags {
+    font-size: 0.90rem;
+    .tag { 
+      margin-right: 10px; 
+      font-style: italic;
+      font-weight: bold;
+      color: #e57373;
+    }
+  }
+}
