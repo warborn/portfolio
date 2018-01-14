@@ -40,6 +40,7 @@
   > .body .tags {
     font-size: 0.90rem;
     .tag { 
+      display: inline-block;
       margin-right: 10px; 
       font-style: italic;
       font-weight: bold;

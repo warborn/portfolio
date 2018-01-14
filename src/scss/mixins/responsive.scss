@@ -15,6 +15,12 @@ $xl: 1200px;
   }
 }
 
+@mixin xs-sm {
+  @media only screen and (min-width: 0) and (max-width: #{$md - 1}) {
+    @content;
+  }
+}
+
 @mixin md {
   @media only screen and (min-width: #{$md}) and (max-width: #{$lg - 1}) {
     @content;

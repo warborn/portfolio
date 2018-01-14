@@ -17,17 +17,7 @@ nav#menu
       a.link(href='/') Home
 .container.main-container
   // start of main-container
-  section#projects.projects.d-flex.justify-content-between
-    each val in [1,2,3]
-      .project-box.mr-4.-fullview
-        img.image(src="src/img/placeholder.png" alt="")
-        .body
-          h5.title Awesome Project
-          p.description Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium reiciendis tempore recusandae voluptas numquam fugit placeat amet.
-          a.link(href="#") Check it on github
-          .tags
-            span.tag #HTML5
-            span.tag #CSS3
-            span.tag #JS
-            span.tag #Ruby
-            span.tag #SQL
+  section#projects.projects
+    include assets/star-projects
+    include assets/remaining-projects
+

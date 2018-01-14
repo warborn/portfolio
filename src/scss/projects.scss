@@ -11,10 +11,29 @@
 }
 
 .main-container {
-  height: 1000px;
   top: 25%;
 }
 
 .projects {
   padding: 50px 0;
+
+  .project-box {
+    margin-bottom: 40px;
+    
+    @include sm {
+      font-size: 1rem;
+      line-height: 1.6rem;
+    }
+
+    @include xs {
+      font-size: 0.875rem;
+      line-height: 1.4rem;
+    }
+  }
+}
+
+.projects .projects-row .project-box {
+  margin-left: 3%;
+  margin-right: 3%;
+  @include xs-sm { margin-left: 0; margin-right: 0; }
 }
