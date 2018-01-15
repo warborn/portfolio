@@ -1,6 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import webpack from 'webpack';
 
 const srcPath = path.join(__dirname, 'src');
@@ -85,7 +86,12 @@ const plugins = [
 if (isProduction === true) {
   console.log('****PRODUCTION BUILD****');
   plugins.push(
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, minimize: true })
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, minimize: true }),
+    new CopyWebpackPlugin([
+      { from: './_redirects',    to: '' },
+      // { from: './src/img/*',    to: 'src/*' },
+      { from: './src/img/**/*', to: '' },
+    ])
   );
 }
 
