@@ -17,12 +17,13 @@
   > .sections > .link {
     color: #EEEEEE;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 500;
     margin-right: 10px;
 
     &.-active {
       color: #e57373;
       font-weight: bold;
+      font-size: 1.3rem;
     }
   }
 

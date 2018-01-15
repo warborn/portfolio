@@ -43,3 +43,9 @@
   margin-right: 3%;
   @include xs-sm { margin-left: 0; margin-right: 0; }
 }
+
+.bottom-link {
+  @include md-xl {
+    display:none;
+  }
+}
