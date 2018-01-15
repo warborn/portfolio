@@ -89,7 +89,6 @@ if (isProduction === true) {
     new webpack.optimize.UglifyJsPlugin({ sourceMap: true, minimize: true }),
     new CopyWebpackPlugin([
       { from: './_redirects',    to: '' },
-      // { from: './src/img/*',    to: 'src/*' },
       { from: './src/img/**/*', to: '' },
     ])
   );
