@@ -19,6 +19,12 @@
 
   .project-box {
     margin-bottom: 40px;
+
+    .button { width: 80%; margin-left: auto; margin-right: auto; }
+
+    @include xs-sm {
+      .button { width: 100% }
+    }
     
     @include sm {
       font-size: 1rem;

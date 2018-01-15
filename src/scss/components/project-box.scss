@@ -26,12 +26,31 @@
   }
 
   > .body .link {
-    color: #e57373; 
+    // color: #e57373; 
+    color: #aab3bb;
     text-decoration: underline;
     display: block; 
     margin-bottom: 5px;
     &:hover {
-      color: rgb(233, 134, 134);
+      // color: rgb(233, 134, 134);
+      color: rgb(224, 224, 224);
+      transition: all .2s ease-in-out;
+      transform: scale(1.05);
+    }
+  }
+
+  > .body .button {
+    background-color: #223240;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+    color: rgb(224, 224, 224);
+
+    &:hover {
+      background-color: #293c4d;
+      color: #fff;
+      text-decoration: none;
       transition: all .2s ease-in-out;
       transform: scale(1.05);
     }
@@ -44,7 +63,7 @@
       margin-right: 10px; 
       font-style: italic;
       font-weight: bold;
-      color: #e57373;
+      color: #576f83;
     }
   }
 }
